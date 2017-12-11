@@ -2,20 +2,19 @@
 lib = File.expand_path('../lib/', __FILE__)
 $LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
 
-require 'spree_print_invoice/version'
+require 'base-tiendapp-products'
 
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_print_invoice'
-  s.version     = SpreePrintInvoice.version
-  s.summary     = 'Print invoices and slips from Spree Commerce'
-  s.description = s.summary
-  s.required_ruby_version = '>= 2.1.0'
+  s.name        = 'base_tiendapp_products'
+  s.version     = BaseTiendappProducts::VERSION
+  s.summary     = 'Import and Export TiendApp products'
+  s.description = 'Import and Export TiendApp products of a certain domain'
+  s.required_ruby_version = '>= 2.2.7'
 
-  s.authors      = ['Spree Commerce', 'Tobias Bohwalli', 'Martin Meyerhoff']
-  s.email        = 'gems@spreecommerce.com'
-  s.homepage     = 'https://github.com/spree-contrib/spree_print_invoice'
-  s.license      = 'BSD-3'
+  s.authors      = ['Spree Commerce', 'Francesca Lucchini', 'Loreto Prieto']
+  s.homepage     = 'https://github.com/FranLucchini/base-tiendapp-products'
+  s.license      = 'MIT'
 
   s.files        = `git ls-files`.split("\n")
   s.test_files   = `git ls-files -- spec/*`.split("\n")
@@ -29,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'capybara'
   s.add_development_dependency 'poltergeist'
   s.add_development_dependency 'factory_girl'
+  s.add_development_dependency 'factory_bot'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'sqlite3'
@@ -41,6 +41,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'rubocop'
   s.add_development_dependency 'pg'
-  s.add_development_dependency 'mysql2'
   s.add_development_dependency 'appraisal'
 end
